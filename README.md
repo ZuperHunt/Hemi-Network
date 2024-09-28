@@ -1,57 +1,61 @@
-Penulis: [nama_penulis](link_twt)
+Penulis: [Naufal](https://x.com/0xfal)
 
-# Pengenalan
-Bab ini berisi pengenalan mengenai nama_project
-
-## Nama_Project
 > [!NOTE]
-> berikan_description_singkat_mengenai_project_tersebut
+> **WHAT IS Hemi Network?**\
+> .
 
-### Investor
-taroh_img_investor_jika_ada
+# Tutorial Hemi Network PoP Mining
 
-# Tutorial XXX
-Bab ini berisi tutorial cara menjalankan XXX
+## 1. Needs
 
-## Requirement
-Syarat menjalankan XXX
-- Spek Komputer
-  
-| Name | Minimum |
-| ------------- | ------------- |
-| Operating System  | OS_NAME  |
-| CPU  | X Cores  |
-| RAM  | X GB  |
-| SSD  | XX GB  |
-- item_2_dan_seterusnya_jika_ada
+Kamu bisa gunakan VPS atau PC pribadi dengan kebutuhan:
 
-> [!TIP]
-> Kami menggunakan Digital Ocean dengan speksifikasi `XX/ X Core/ X GB RAM/ XX GB SSD`. Jika kamu membutuhkan VPS, kami memiliki link gratis credit VPS DigitalOcean sebesar $200. Cukup untuk menjalankan XXX selama XX . Daftar sekarang dengan [link utama](link_reff_do_kamu) / [link cadangan](link_reff_do_2_kamu) untuk mendapatkannya.
-  
-## Dependencies
+| ✅ Linux | ✅ macOS | ✅ Windows (Native / WSL) |
+| ------------- | ------------- | ------------- |
 
-### Install X 
+| Part | Minimum | Recommended |
+| ------------- | ------------- | ------------- |
+| CPU | - | - |
+| RAM | - | - |
+| SSD | - | - |
+
+Tutorial ini dibuat menggunakan Linux (Ubuntu), untuk sistem operasi lainnya mungkin akan sedikit berbeda.
+
+## 2. Executions
+
+### 2.1 Download Repository
+
 ```
-sudo apt-get install xxxx
-```
-
-## Menjalankan XXX
-
-### Run XXX
-```
-code blocks for commands
+wget https://github.com/hemilabs/heminetwork/releases/download/v0.4.3/heminetwork_v0.4.3_linux_amd64.tar.gz
+tar xvf heminetwork_v0.4.3_linux_amd64.tar.gz
+cd heminetwork_v0.4.3_linux_amd64
 ```
 
-## Help
+### 2.2 Generate `public key`
 
-Join komunitas [Discord ZuperHunt](https://t.co/n7TeWVlA48) jika kamu ada pertanyaan.
+```
+./keygen -secp256k1 -json -net="testnet" > ~/popm-address.json
+cat ~/popm-address.json
+```
 
-## Change Logs
+Simpan output dari menjalankan perintah di atas, dan klaim `0.002 tBTC` di [Hemi Discord faucet](https://discord.gg/hemixyz) menggunakan `pubkey_hash`.
 
-* 0.0.1
-    * Initial Release
+### 2.3 Run the Miner
 
-## Acknowledgments
+Ubah `<private_key>` sesuai dengan yang sudah kamu generate sebelumnya, dan untuk `<fee_per_vB_integer>` kurekomendasikan `200` ke atas (bisa cek [mempool](https://mempool.space/testnet) untuk nilai yang lebih pasti).
 
-Referensi
-* [nama_referensi](link_referensi)
+```
+export POPM_BTC_PRIVKEY=<private_key>
+export POPM_STATIC_FEE=<fee_per_vB_integer>
+export POPM_BFG_URL=wss://testnet.rpc.hemi.network/v1/ws/public
+./popmd
+```
+
+---
+
+Reach us if you have more questions:\
+ZuperHunt's [Discord server](https://discord.gg/ZuperHunt) | [X(Twitter)](https://twitter.com/ZuperHunt)
+
+# Acknowledgements
+
+* [PoP Mining](https://docs.hemi.xyz/how-to-tutorials/tutorials/setup-part-1)
