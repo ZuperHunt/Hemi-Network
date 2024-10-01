@@ -1,0 +1,6 @@
+# Exclude all workdir except .gitempty
+/**/workdir/**
+!/**/workdir/.gitempty
+
+# Exclude all .env file
+/**/.env

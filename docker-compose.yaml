@@ -1,0 +1,5 @@
+services:
+  hemi-network:
+    build: .
+    volumes:
+      - ./workdir:/app/secrets
