@@ -6,6 +6,18 @@ Penulis: [Naufal](https://x.com/0xfal)
 
 # Tutorial Hemi Network PoP Mining
 
+# Docker
+Cukup clone repository ini, install Docker dengan Docker Compose dan lakukan command di bawah ini:
+```bash
+git clone https://github.com/ZuperHunt/Hemi-Network
+cd Hemi-Network
+docker compose up -d
+```
+Lokasi secrets ada di `./secrets/popm-secret.json` dan bersifar superuser. Jangan dihapus dan dimodifikasi.
+
+# Manual
+Langkah-langkah di bawah bisa kamu eksekusi apabila ingin menjalankan aplikasi ini secara manual.
+
 ## 1. Needs
 
 Kamu bisa gunakan VPS atau PC pribadi dengan kebutuhan:

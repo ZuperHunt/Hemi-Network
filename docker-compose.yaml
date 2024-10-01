@@ -1,5 +1,7 @@
 services:
   hemi-network:
-    build: .
+    container_name: hemi-network
+    image: ghcr.io/zuperhunt/hemi-network:v0.4.3-zh-1
+    restart: unless-stopped
     volumes:
       - ./workdir:/app/secrets
