@@ -11,6 +11,7 @@ Cukup clone repository ini, install Docker dengan Docker Compose dan lakukan com
 ```bash
 git clone https://github.com/ZuperHunt/Hemi-Network
 cd Hemi-Network
+cp .env.example .env
 docker compose up -d
 ```
 Lokasi secrets ada di `./secrets/popm-secret.json` dan bersifar superuser. Jangan dihapus dan dimodifikasi.
