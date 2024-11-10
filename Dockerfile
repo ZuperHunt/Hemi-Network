@@ -13,7 +13,7 @@ ENV POPM_STATIC_FEE="200"
 ENV POPM_BFG_URL="wss://testnet.rpc.hemi.network/v1/ws/public"
 
 # Download Assets
-ADD https://github.com/hemilabs/heminetwork/releases/download/v0.4.3/heminetwork_v0.4.3_linux_amd64.tar.gz .
+ADD https://github.com/hemilabs/heminetwork/releases/download/v0.4.5/heminetwork_v0.4.3_linux_amd64.tar.gz .
 COPY start.sh .
 
 # Update dependency
